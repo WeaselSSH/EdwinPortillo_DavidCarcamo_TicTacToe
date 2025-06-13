@@ -25,16 +25,19 @@ public class RegistroInicioSesion {
 
         jugadores[cantidadJugadores] = new Jugador(nombreJugador, usuario, contrasenia, puntos);
         cantidadJugadores++;
+        javax.swing.JOptionPane.showMessageDialog(null, "Registro de usuario exitoso!");
         return true;
     }
 
     public boolean inicioSesion(String usuario, String contrasenia) {
         for (Jugador jugador : jugadores) {
             if (jugador != null && jugador.getNombre().equals(usuario) && jugador.getContrasenia().equals(contrasenia)) {
-                System.out.println("Inicio de sesión exitoso.");
+                javax.swing.JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
                 return true;
             }
         }
+
+        javax.swing.JOptionPane.showMessageDialog(null, "Error: Usuario o contraseña incorrecta.");
         return false;
     }
 
