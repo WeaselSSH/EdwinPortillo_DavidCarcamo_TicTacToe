@@ -1,14 +1,16 @@
 package edwin_david_tictactoe;
 
 public class FrmRegistro extends javax.swing.JFrame {
+
     private int puntos = 0;
     private String usuario;
     private String contrasenia;
     private String nombreJugador;
-    
-    RegistroInicioSesion registro = new RegistroInicioSesion();
-    
-    public FrmRegistro() {
+
+    RegistroInicioSesion registro;
+
+    public FrmRegistro(RegistroInicioSesion registroInicio) {
+        this.registro = registroInicio;
         initComponents();
     }
 
@@ -121,13 +123,13 @@ public class FrmRegistro extends javax.swing.JFrame {
         usuario = txtUsuario.getText();
         contrasenia = txtContrasenia.getText();
         nombreJugador = txtNombreJugador.getText();
-        
+
         registro.registrarJugador(nombreJugador, usuario, contrasenia, puntos);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-        FrmMenuInicial menuInicial = new FrmMenuInicial();
+        FrmMenuInicial menuInicial = new FrmMenuInicial(registro);
         menuInicial.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
@@ -162,7 +164,8 @@ public class FrmRegistro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmRegistro().setVisible(true);
+                RegistroInicioSesion registro = new RegistroInicioSesion();
+                new FrmInicioSesion(registro).setVisible(true);
             }
         });
     }

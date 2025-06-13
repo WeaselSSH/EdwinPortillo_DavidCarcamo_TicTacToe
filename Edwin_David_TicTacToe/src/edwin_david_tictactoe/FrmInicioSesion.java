@@ -5,9 +5,10 @@ public class FrmInicioSesion extends javax.swing.JFrame {
     String usuario;
     String contrasenia;
 
-    RegistroInicioSesion inicioSesion = new RegistroInicioSesion();
+    RegistroInicioSesion inicioSesion;
 
-    public FrmInicioSesion() {
+    public FrmInicioSesion(RegistroInicioSesion inicioSesion) {
+        this.inicioSesion = inicioSesion;
         initComponents();
     }
 
@@ -105,7 +106,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         contrasenia = txtContrasenia.getText();
 
         if (inicioSesion.inicioSesion(usuario, contrasenia)) {
-            FrmMenuInicial menuInicial = new FrmMenuInicial();
+            FrmMenuInicial menuInicial = new FrmMenuInicial(inicioSesion);
             menuInicial.setVisible(true);
             this.dispose();
         }
@@ -113,7 +114,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-        FrmMenuInicial menuInicial = new FrmMenuInicial();
+        FrmMenuInicial menuInicial = new FrmMenuInicial(inicioSesion);
         menuInicial.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
@@ -146,7 +147,8 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmInicioSesion().setVisible(true);
+                RegistroInicioSesion registro = new RegistroInicioSesion();
+                new FrmInicioSesion(registro).setVisible(true);
             }
         });
     }

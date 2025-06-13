@@ -34,8 +34,7 @@ public class RegistroInicioSesion {
         for (Jugador jugador : jugadores) {
             if (jugador != null && jugador.getUsuario().equals(usuario) && jugador.getContrasenia().equals(contrasenia)) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
-                GlobalData playerLogged = new GlobalData();
-                playerLogged.setJugadorIniciado(jugador);//Se juarda el jugador iniciado sesion
+                this.jugadorIniciado = jugador;
                 return true;
             }
         }

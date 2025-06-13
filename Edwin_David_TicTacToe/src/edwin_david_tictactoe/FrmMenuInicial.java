@@ -2,7 +2,10 @@ package edwin_david_tictactoe;
 
 public class FrmMenuInicial extends javax.swing.JFrame {
 
-    public FrmMenuInicial() {
+    RegistroInicioSesion registroInicio;
+
+    public FrmMenuInicial(RegistroInicioSesion registroInicio) {
+        this.registroInicio = registroInicio;
         initComponents();
     }
 
@@ -76,10 +79,10 @@ public class FrmMenuInicial extends javax.swing.JFrame {
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
         // TODO add your handling code here:
-        FrmInicioSesion inicioSesion = new FrmInicioSesion(); 
+        FrmInicioSesion inicioSesion = new FrmInicioSesion(registroInicio);
         inicioSesion.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -89,43 +92,20 @@ public class FrmMenuInicial extends javax.swing.JFrame {
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
         // TODO add your handling code here:
-        FrmRegistro registro = new FrmRegistro(); 
+        FrmRegistro registro = new FrmRegistro(registroInicio);
         registro.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMenuInicial().setVisible(true);
+                RegistroInicioSesion registro = new RegistroInicioSesion();
+                new FrmMenuInicial(registro).setVisible(true);
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInicioSesion;
