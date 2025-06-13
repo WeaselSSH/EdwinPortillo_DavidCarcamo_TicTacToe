@@ -34,6 +34,11 @@ public class MenuInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnRegistro.setText("Registrarse");
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroActionPerformed(evt);
+            }
+        });
 
         btnInicioSesion.setText("Iniciar Sesión");
         btnInicioSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -87,12 +92,23 @@ public class MenuInicial extends javax.swing.JFrame {
 
     private void btnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioSesionActionPerformed
         // TODO add your handling code here:
+        FrmInicioSesion inicioSesion = new FrmInicioSesion(); 
+        inicioSesion.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:   
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+        // TODO add your handling code here:
+        FrmRegistro registro = new FrmRegistro(); 
+        registro.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegistroActionPerformed
 
     /**
      * @param args the command line arguments
