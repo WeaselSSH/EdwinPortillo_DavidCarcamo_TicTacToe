@@ -91,7 +91,8 @@ public class FrmRanking extends javax.swing.JFrame {
         for (int i = 0; i < cantidadJugadores; i++) {
             copiaJugadores[i] = registro.obtenerJugador(i);
         }
-
+        
+        //Carga jugadores
         for (int i = 0; i < cantidadJugadores - 1; i++) {
             for (int j = 0; j < cantidadJugadores - i - 1; j++) {
                 if (copiaJugadores[j].getPuntos() < copiaJugadores[j + 1].getPuntos()) {

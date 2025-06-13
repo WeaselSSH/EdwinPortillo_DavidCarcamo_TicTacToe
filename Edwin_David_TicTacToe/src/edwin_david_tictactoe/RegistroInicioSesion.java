@@ -4,6 +4,7 @@ public class RegistroInicioSesion {
 
     private Jugador jugadores[] = new Jugador[50];
     private int cantidadJugadores = 0;
+    public Jugador jugadorIniciado;
 
     public boolean registrarJugador(String nombreJugador, String usuario, String contrasenia, int puntos) {
         if (cantidadJugadores >= jugadores.length) {
@@ -33,6 +34,8 @@ public class RegistroInicioSesion {
         for (Jugador jugador : jugadores) {
             if (jugador != null && jugador.getUsuario().equals(usuario) && jugador.getContrasenia().equals(contrasenia)) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
+                GlobalData playerLogged = new GlobalData();
+                playerLogged.setJugadorIniciado(jugador);//Se juarda el jugador iniciado sesion
                 return true;
             }
         }
@@ -50,6 +53,10 @@ public class RegistroInicioSesion {
     
     public int getCantidadJugadores() {
         return cantidadJugadores;
+    }
+    
+    public Jugador obtenerJugadorIniciado(){
+        return jugadorIniciado;
     }
 
 }
