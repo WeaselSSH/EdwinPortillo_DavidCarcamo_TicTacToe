@@ -20,9 +20,9 @@ import javax.swing.JPanel;
  */
 public class Tablero {
     private JButton Casillas[][] = new JButton[3][3]; //Almacena botones de acuerdo a posicion
-    private String Fichas[][]= new String[3][3]; 
+    private String Fichas[][]= new String[3][3]; //Almacena que tipo de ficha es en cada casilla
     private boolean turnos= true; //true = jugador X   false = Jugador 0
-    
+    private JFrame frameGamePlay; //Guarda el frame de juego para uso en distintos metodos
     
     //Constructor tablero
     public Tablero(){
@@ -50,7 +50,7 @@ public class Tablero {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
-        
+        frameGamePlay=frame;
         
     }
     
@@ -121,12 +121,14 @@ public class Tablero {
             //Revisar filas
             if(areaGanadora(Fichas[i][0], Fichas[i][1], Fichas[i][2])){
                 JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[i][0]);
+                frameGamePlay.setVisible(false);
                 return;
             }
             
             //Revisar columnas
             if(areaGanadora(Fichas[0][i], Fichas[1][i], Fichas[2][i])){
                 JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[0][i]);
+                frameGamePlay.setVisible(false);
                 return;
             }  
         }
@@ -134,12 +136,14 @@ public class Tablero {
         //Revision de diagonal A
         if(areaGanadora(Fichas[0][0],Fichas[1][1], Fichas[2][2])){
             JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[0][0]);
+            frameGamePlay.setVisible(false);
             return;
         }
         
         //Revision de diagonal B
         if(areaGanadora(Fichas[0][2], Fichas[1][1], Fichas[2][0])){
             JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[0][2]);
+            frameGamePlay.setVisible(false);
             return;
         }
         
@@ -167,6 +171,7 @@ public class Tablero {
         
         if(filas[0]==true && filas[1]== true && filas[2]==true){
            JOptionPane.showMessageDialog(null, "Es un empate" );
+           frameGamePlay.setVisible(false);
            return; 
         }
         
