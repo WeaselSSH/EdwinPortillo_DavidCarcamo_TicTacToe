@@ -1,11 +1,19 @@
 package edwin_david_tictactoe;
 
+
+
+
+
 public class FrmInicioSesion extends javax.swing.JFrame {
 
     String usuario;
     String contrasenia;
-
+    
+    
+    
+    
     RegistroInicioSesion inicioSesion = new RegistroInicioSesion();
+    
 
     public FrmInicioSesion() {
         initComponents();
@@ -105,7 +113,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         contrasenia = txtContrasenia.getText();
 
         if (inicioSesion.inicioSesion(usuario, contrasenia)) {
-            FrmMenuInicial menuInicial = new FrmMenuInicial();
+            FrmMenuPrincipal menuInicial = new FrmMenuPrincipal();
             menuInicial.setVisible(true);
             this.dispose();
         }

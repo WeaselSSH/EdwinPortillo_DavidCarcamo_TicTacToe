@@ -166,6 +166,13 @@ public class FrmRegistro extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    public RegistroInicioSesion getRegistro(){
+        return registro;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
