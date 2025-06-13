@@ -23,6 +23,11 @@ public class Tablero {
     private String Fichas[][]= new String[3][3]; //Almacena que tipo de ficha es en cada casilla
     private boolean turnos= true; //true = jugador X   false = Jugador 0
     private JFrame frameGamePlay; //Guarda el frame de juego para uso en distintos metodos
+    GlobalData setterPlayers = new GlobalData();
+    
+    Jugador playerX= setterPlayers.jugadorInciado;
+    Jugador playerO= setterPlayers.jugadorContricante;
+    
     
     //Constructor tablero
     public Tablero(){
