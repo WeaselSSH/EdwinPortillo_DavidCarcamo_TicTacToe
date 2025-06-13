@@ -52,6 +52,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
 
         btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +102,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         rank.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRankingActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        FrmMenuInicial menuScreen = new FrmMenuInicial();
+        menuScreen.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments

@@ -133,6 +133,8 @@ public class Tablero {
                     playerO.setPuntos(10);
                     
                 }
+                FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
+                mainMenu.setVisible(true);
                 frameGamePlay.setVisible(false);
                 return;
             }
@@ -140,6 +142,8 @@ public class Tablero {
             //Revisar columnas
             if(areaGanadora(Fichas[0][i], Fichas[1][i], Fichas[2][i])){
                 JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[0][i]);
+                FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
+                mainMenu.setVisible(true);
                 frameGamePlay.setVisible(false);
                 return;
             }  
@@ -148,6 +152,8 @@ public class Tablero {
         //Revision de diagonal A
         if(areaGanadora(Fichas[0][0],Fichas[1][1], Fichas[2][2])){
             JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[0][0]);
+            FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
+            mainMenu.setVisible(true);
             frameGamePlay.setVisible(false);
             return;
         }
@@ -155,6 +161,8 @@ public class Tablero {
         //Revision de diagonal B
         if(areaGanadora(Fichas[0][2], Fichas[1][1], Fichas[2][0])){
             JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[0][2]);
+            FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
+            mainMenu.setVisible(true);
             frameGamePlay.setVisible(false);
             return;
         }
@@ -183,6 +191,8 @@ public class Tablero {
         
         if(filas[0]==true && filas[1]== true && filas[2]==true){
            JOptionPane.showMessageDialog(null, "Es un empate" );
+           FrmMenuPrincipal mainMenu = new FrmMenuPrincipal();
+           mainMenu.setVisible(true);
            frameGamePlay.setVisible(false);
            return; 
         }
