@@ -85,12 +85,15 @@ public class FrmRanking extends javax.swing.JFrame {
 
     public void cargarRanking() {
         RegistroInicioSesion registro = new RegistroInicioSesion();
-        Jugador copiaJugadores[] = registro.getJugadores();
         int cantidadJugadores = registro.getCantidadJugadores();
+        Jugador copiaJugadores[] = new Jugador[cantidadJugadores];
+        
+        for (int i = 0; i < cantidadJugadores; i++) {
+            copiaJugadores[i] = registro.obtenerJugador(i);
+        }
 
-
-        for (int i = 0; i < copiaJugadores.length - 1; i++) {
-            for (int j = 0; j < copiaJugadores.length - i - 1; j++) {
+        for (int i = 0; i < cantidadJugadores - 1; i++) {
+            for (int j = 0; j < cantidadJugadores - i - 1; j++) {
                 if (copiaJugadores[j].getPuntos() < copiaJugadores[j + 1].getPuntos()) {
                     Jugador temp = copiaJugadores[j];
                     copiaJugadores[j] = copiaJugadores[j + 1];
@@ -101,12 +104,12 @@ public class FrmRanking extends javax.swing.JFrame {
 
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Posición");
-        modelo.addColumn("Usuario");
+        modelo.addColumn("Nombre");
         modelo.addColumn("Puntos");
 
         for (int i = 0; i < copiaJugadores.length; i++) {
             Jugador jugador = copiaJugadores[i];
-            modelo.addRow(new Object[]{i + 1, jugador.getUsuario(), jugador.getPuntos()});
+            modelo.addRow(new Object[]{i + 1, jugador.getNombre(), jugador.getPuntos()});
         }
 
         tblRanking.setModel(modelo);

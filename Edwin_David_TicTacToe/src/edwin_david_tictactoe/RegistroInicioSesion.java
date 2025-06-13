@@ -41,8 +41,11 @@ public class RegistroInicioSesion {
         return false;
     }
 
-    public Jugador[] getJugadores() {
-        return jugadores;
+    public Jugador obtenerJugador(int i) {
+        if (i >= 0 && i < cantidadJugadores) {
+            return jugadores[i];
+        }
+        return null;
     }
     
     public int getCantidadJugadores() {
