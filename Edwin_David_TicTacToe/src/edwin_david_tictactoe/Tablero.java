@@ -6,6 +6,7 @@ package edwin_david_tictactoe;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.util.Set;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -126,6 +127,12 @@ public class Tablero {
             //Revisar filas
             if(areaGanadora(Fichas[i][0], Fichas[i][1], Fichas[i][2])){
                 JOptionPane.showMessageDialog(null, "Ha ganado el jugador "+Fichas[i][0]);
+                if(Fichas[i][0].equals("X")){
+                    playerX.setPuntos(10);
+                }else if(Fichas[i][0].equals("O")){
+                    playerO.setPuntos(10);
+                    
+                }
                 frameGamePlay.setVisible(false);
                 return;
             }

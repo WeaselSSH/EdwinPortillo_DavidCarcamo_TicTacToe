@@ -37,9 +37,19 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jLabel1.setText("MENU PRINCIPAL");
 
         btnJugar.setText("Jugar Tic Tac Toe");
+        btnJugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJugarActionPerformed(evt);
+            }
+        });
 
         btnRanking.setText("Ranking");
         btnRanking.setToolTipText("");
+        btnRanking.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRankingActionPerformed(evt);
+            }
+        });
 
         btnCerrarSesion.setText("Cerrar Sesión");
 
@@ -76,6 +86,17 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
+        Tablero GamePlay = new Tablero();
+        this.dispose();
+    }//GEN-LAST:event_btnJugarActionPerformed
+
+    private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
+        FrmRanking rank = new FrmRanking();
+        rank.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRankingActionPerformed
 
     /**
      * @param args the command line arguments

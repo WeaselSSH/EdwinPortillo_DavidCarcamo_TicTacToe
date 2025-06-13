@@ -78,8 +78,8 @@ public class FrmRanking extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        FrmMenuInicial menuInicial = new FrmMenuInicial();
-        menuInicial.setVisible(true);
+        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
+        menuPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
