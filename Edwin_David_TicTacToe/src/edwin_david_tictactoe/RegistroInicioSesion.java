@@ -2,8 +2,8 @@ package edwin_david_tictactoe;
 
 public class RegistroInicioSesion {
 
-    Jugador[] jugadores = new Jugador[50];
-    int cantidadJugadores = 0;
+    private Jugador jugadores[] = new Jugador[50];
+    private int cantidadJugadores = 0;
 
     public boolean registrarJugador(String nombreJugador, String usuario, String contrasenia, int puntos) {
         if (cantidadJugadores >= jugadores.length) {
@@ -39,6 +39,14 @@ public class RegistroInicioSesion {
 
         javax.swing.JOptionPane.showMessageDialog(null, "Error: Usuario o contraseña incorrecta.");
         return false;
+    }
+
+    public Jugador[] getJugadores() {
+        return jugadores;
+    }
+    
+    public int getCantidadJugadores() {
+        return cantidadJugadores;
     }
 
 }
