@@ -31,7 +31,7 @@ public class RegistroInicioSesion {
 
     public boolean inicioSesion(String usuario, String contrasenia) {
         for (Jugador jugador : jugadores) {
-            if (jugador != null && jugador.getNombre().equals(usuario) && jugador.getContrasenia().equals(contrasenia)) {
+            if (jugador != null && jugador.getUsuario().equals(usuario) && jugador.getContrasenia().equals(contrasenia)) {
                 javax.swing.JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso!");
                 return true;
             }

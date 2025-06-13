@@ -1,9 +1,10 @@
 package edwin_david_tictactoe;
 
 public class FrmInicioSesion extends javax.swing.JFrame {
+
     String usuario;
     String contrasenia;
-    
+
     RegistroInicioSesion inicioSesion = new RegistroInicioSesion();
 
     public FrmInicioSesion() {
@@ -102,8 +103,12 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
         usuario = txtUsuario.getText();
         contrasenia = txtContrasenia.getText();
-        
-        inicioSesion.inicioSesion(usuario, contrasenia);
+
+        if (inicioSesion.inicioSesion(usuario, contrasenia)) {
+            FrmMenuInicial menuInicial = new FrmMenuInicial();
+            menuInicial.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnInicioSesionActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
