@@ -4,6 +4,7 @@
  */
 package edwin_david_tictactoe;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -33,7 +34,8 @@ public class Tablero {
         
         for(int i=0; i<Casillas.length; i++){
             for(int j=0; j<Casillas.length; j++){
-                JButton espacio= new JButton("Posicion"+i+j);
+                JButton espacio= new JButton();
+                espacio.setBackground(Color.white);
                 espacio.setSize(100, 100);
                 Casillas[i][j]=espacio;
                 asignarFichas(i, j);
@@ -64,6 +66,11 @@ public class Tablero {
            ImageIcon icono = new ImageIcon(getClass().getResource("/iconos/equis.png"));
            Casillas[i][j].setIcon(icono);
            Casillas[i][j].setText(null);
+           Casillas[i][j].setEnabled(false);
+           Casillas[i][j].setOpaque(true);
+           Casillas[i][j].setForeground(Color.white);
+           Casillas[i][j].setDisabledIcon(icono);
+           
            Fichas[i][j]="X";
            setTurno(false);
            revisionCasillas();
@@ -74,6 +81,10 @@ public class Tablero {
             ImageIcon icono = new ImageIcon(getClass().getResource("/iconos/cero.png"));
             Casillas[i][j].setIcon(icono);
             Casillas[i][j].setText(null);
+            Casillas[i][j].setEnabled(false);
+            Casillas[i][j].setOpaque(true);
+            Casillas[i][j].setForeground(Color.white);
+            Casillas[i][j].setDisabledIcon(icono);
             Fichas[i][j]="O";
             setTurno(true);
             revisionCasillas();
@@ -132,6 +143,9 @@ public class Tablero {
             return;
         }
         
+        //Ver si estan todas las casillas llenas
+        //Se asume que no hubo ganador y es un empate
+        decisionEmpate();
         System.out.println("Aun no hay ganador");
         
         
@@ -140,6 +154,26 @@ public class Tablero {
         
         
     }//Cierre de metodo
+    
+    //Creacion de metodo que determina el empate
+    private void decisionEmpate(){
+        boolean filas[] = new boolean[3];
+        
+        for(int i=0; i<3; i++){
+            if(Fichas[i][1]!=null && Fichas[i][1] != null && Fichas[i][2] !=null){
+                filas[i]=true;
+            }
+        }
+        
+        if(filas[0]==true && filas[1]== true && filas[2]==true){
+           JOptionPane.showMessageDialog(null, "Es un empate" );
+           return; 
+        }
+        
+        return;
+   
+    }
+            
     
     
     //Metodo que valida si tres fichas son iguales
