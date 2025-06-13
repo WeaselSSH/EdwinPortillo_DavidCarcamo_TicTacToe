@@ -5,10 +5,18 @@ public class FrmRegistro extends javax.swing.JFrame {
     private String usuario;
     private String contrasenia;
     private String nombreJugador;
+<<<<<<< Updated upstream
     
     RegistroInicioSesion registro = new RegistroInicioSesion();
     
     public FrmRegistro() {
+=======
+
+    RegistroInicioSesion registro = new RegistroInicioSesion();
+
+    public FrmRegistro(RegistroInicioSesion registroInicio) {
+        this.registro = registroInicio;
+>>>>>>> Stashed changes
         initComponents();
     }
 
